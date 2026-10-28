@@ -80,6 +80,13 @@ export const PAGE_SEO = Object.freeze({
     type: "service",
     schemaType: "Service",
   },
+  gallery: {
+    path: "/gallery",
+    title: "Design Gallery & Catalogs | Link Decor Karachi Projects",
+    description: "Explore Link Decor's portfolio of gypsum false ceilings, SPC flooring, 3D wallpapers, WPC wall paneling, and window blinds executed across Karachi.",
+    type: "website",
+    schemaType: "CollectionPage",
+  },
   about: {
     path: "/about",
     title: "About Link Decor | Karachi's Premier Interior Design Specialists",

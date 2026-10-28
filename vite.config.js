@@ -15,6 +15,7 @@ const pages = [
   { name: "wallpapers", file: "services/wallpapers.html" },
   { name: "wall-paneling", file: "services/wall-paneling.html" },
   { name: "window-blinds", file: "services/window-blinds.html" },
+  { name: "gallery", file: "gallery.html" },
   { name: "about", file: "about.html" },
   { name: "contact", file: "contact.html" },
   { name: "terms", file: "terms.html" },

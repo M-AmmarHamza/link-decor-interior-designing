@@ -1741,3 +1741,37 @@ h4 { font-size: 1.2rem; }
     height: 250px;
   }
 }
+
+/* Homepage Call-to-Action Banner */
+.cta-banner {
+  background: linear-gradient(135deg, var(--primary) 0%, #223247 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 56px 40px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cta-banner h2 {
+  color: #ffffff;
+  font-size: 2.1rem;
+  margin-bottom: 14px;
+}
+
+.cta-banner p {
+  color: #e2e8f0;
+  max-width: 640px;
+  margin: 0 auto 28px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .cta-banner {
+    padding: 36px 20px;
+  }
+  .cta-banner h2 {
+    font-size: 1.6rem;
+  }
+}

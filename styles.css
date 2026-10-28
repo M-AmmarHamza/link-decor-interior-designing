@@ -1216,6 +1216,20 @@ h4 { font-size: 1.2rem; }
   height: 12rem !important;
 }
 
+.h-56 {
+  height: 14rem !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+@media (min-width: 640px) {
+  .sm\:h-56 {
+    height: 14rem !important;
+  }
+}
+
 .rounded-lg {
   border-radius: 0.5rem !important;
 }

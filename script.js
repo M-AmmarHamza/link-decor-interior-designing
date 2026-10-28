@@ -123,25 +123,33 @@ function initPortfolioFilter() {
   const cards = document.querySelectorAll(".portfolio-card");
   if (!tabButtons.length || !cards.length) return;
 
+  function applyFilter(filter) {
+    cards.forEach((card) => {
+      const category = card.getAttribute("data-category");
+      if (filter === "all" || category === filter) {
+        card.style.display = "block";
+        card.style.opacity = "1";
+      } else {
+        card.style.display = "none";
+        card.style.opacity = "0";
+      }
+    });
+  }
+
   tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
       tabButtons.forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
-
       const filter = button.getAttribute("data-filter");
-
-      cards.forEach((card) => {
-        const category = card.getAttribute("data-category");
-        if (filter === "all" || category === filter) {
-          card.style.display = "block";
-          card.style.opacity = "1";
-        } else {
-          card.style.display = "none";
-          card.style.opacity = "0";
-        }
-      });
+      applyFilter(filter);
     });
   });
+
+  // Apply initial filter on load based on active tab
+  const activeBtn = document.querySelector(".portfolio-tab-btn.active");
+  if (activeBtn) {
+    applyFilter(activeBtn.getAttribute("data-filter"));
+  }
 }
 
 function initFaqAccordion() {

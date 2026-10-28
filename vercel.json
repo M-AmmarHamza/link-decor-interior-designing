@@ -1,0 +1,33 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {"source":"/index.html","destination":"/","permanent":true},
+    {"source":"/services.html","destination":"/services","permanent":true},
+    {"source":"/about.html","destination":"/about","permanent":true},
+    {"source":"/contact.html","destination":"/contact","permanent":true},
+    {"source":"/privacy-policy.html","destination":"/privacy-policy","permanent":true},
+    {"source":"/terms.html","destination":"/terms","permanent":true}
+  ],
+  "rewrites": [
+    {"source":"/services","destination":"/services.html"},
+    {"source":"/services/ceilings","destination":"/services/ceilings.html"},
+    {"source":"/services/flooring","destination":"/services/flooring.html"},
+    {"source":"/services/wallpapers","destination":"/services/wallpapers.html"},
+    {"source":"/services/wall-paneling","destination":"/services/wall-paneling.html"},
+    {"source":"/services/window-blinds","destination":"/services/window-blinds.html"}
+  ],
+  "headers": [
+    {"source":"/(.*)","headers":[
+      {"key":"X-Content-Type-Options","value":"nosniff"},
+      {"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},
+      {"key":"Permissions-Policy","value":"camera=(), microphone=(), geolocation=()"},
+      {"key":"X-Frame-Options","value":"SAMEORIGIN"}
+    ]},
+    {"source":"/assets/(.*)","headers":[{"key":"Cache-Control","value":"public, max-age=31536000, immutable"}]},
+    {"source":"/sitemap.xml","headers":[{"key":"Content-Type","value":"application/xml; charset=utf-8"},{"key":"Cache-Control","value":"public, max-age=3600"}]},
+    {"source":"/robots.txt","headers":[{"key":"Content-Type","value":"text/plain; charset=utf-8"},{"key":"Cache-Control","value":"public, max-age=3600"}]}
+  ]
+}

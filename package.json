@@ -1,0 +1,15 @@
+{
+  "name": "link-decor-interior-designing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Link Decor - Premium Interior Solutions for Homes & Offices in Karachi. False Ceilings, Wallpapers, SPC Flooring, Wall Paneling & Window Blinds.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/generate-seo.mjs",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

@@ -1278,7 +1278,6 @@ h4 { font-size: 1.2rem; }
   background-color: var(--primary);
   color: #f1f5f9;
   padding-top: 70px;
-  padding-bottom: 6rem; /* Substantial bottom padding (pb-24 / 6rem) to clear floating WhatsApp button */
   border-top: 4px solid var(--accent);
 }
 
@@ -1405,7 +1404,7 @@ h4 { font-size: 1.2rem; }
 }
 
 .footer-bottom {
-  padding: 24px 0;
+  padding: 24px 20px; /* px-5 horizontal padding so it aligns with cards */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1413,11 +1412,14 @@ h4 { font-size: 1.2rem; }
   gap: 16px;
   font-size: 0.85rem;
   color: #94a3b8;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .footer-bottom-links {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 16px; /* gap-4 */
 }
 
 .footer-bottom-links a:hover {
@@ -1559,7 +1561,21 @@ h4 { font-size: 1.2rem; }
   }
 
     .site-footer {
-    padding-bottom: 6.5rem; /* Extra bottom clearance on mobile so floating WhatsApp never overlaps */
+    padding-bottom: 0 !important;
+  }
+  .footer-bottom {
+    padding: 20px 20px 76px 20px; /* px-5 aligns neatly with cards; 76px cleanly clears WhatsApp button without massive empty void */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.85rem;
   }
   .footer-col {
     width: 100%;

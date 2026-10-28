@@ -142,10 +142,15 @@ function initPortfolioFilter() {
       button.classList.add("active");
       const filter = button.getAttribute("data-filter");
       applyFilter(filter);
+
+      // Smooth scroll the clicked button into view horizontally if near edge
+      try {
+        button.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+      } catch (e) {}
     });
   });
 
-  // Apply initial filter on load based on active tab
+  // Default active state is "All Catalogs"
   const activeBtn = document.querySelector(".portfolio-tab-btn.active");
   if (activeBtn) {
     applyFilter(activeBtn.getAttribute("data-filter"));

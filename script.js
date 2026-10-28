@@ -51,36 +51,71 @@ function initMobileMenu() {
   const nav = document.querySelector(".nav-links");
   if (!toggle || !nav) return;
 
-  toggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("active");
-    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    toggle.innerHTML = isOpen 
-      ? '<span class="material-symbols-outlined">close</span>'
-      : '<span class="material-symbols-outlined">menu</span>';
-  });
+  function openMenu() {
+    nav.classList.add("active");
+    toggle.setAttribute("aria-expanded", "true");
+    const icon = toggle.querySelector(".material-symbols-outlined");
+    if (icon) icon.textContent = "close";
+    document.body.classList.add("mobile-menu-open");
+  }
 
-  // Close when clicking nav link
+  function closeMenu() {
+    nav.classList.remove("active");
+    toggle.setAttribute("aria-expanded", "false");
+    const icon = toggle.querySelector(".material-symbols-outlined");
+    if (icon) icon.textContent = "menu";
+    document.body.classList.remove("mobile-menu-open");
+  }
+
+  function toggleMenu(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (nav.classList.contains("active")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  // Toggle button event listeners
+  toggle.addEventListener("click", toggleMenu);
+
+  // Close when clicking any nav link inside drawer
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      nav.classList.remove("active");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.innerHTML = '<span class="material-symbols-outlined">menu</span>';
+      closeMenu();
     });
   });
 
-  // Close when clicking outside
+  // Prevent clicks inside nav drawer from closing it
+  nav.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Close when clicking anywhere outside header & nav
   document.addEventListener("click", (e) => {
-    if (!headerContains(e.target) && nav.classList.contains("active")) {
-      nav.classList.remove("active");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.innerHTML = '<span class="material-symbols-outlined">menu</span>';
+    if (nav.classList.contains("active")) {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        closeMenu();
+      }
     }
   });
 
-  function headerContains(target) {
-    const header = document.querySelector(".site-header");
-    return header && header.contains(target);
-  }
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("active")) {
+      closeMenu();
+    }
+  });
+
+  // Close drawer if resized to desktop width
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768 && nav.classList.contains("active")) {
+      closeMenu();
+    }
+  }, { passive: true });
 }
 
 function initPortfolioFilter() {
@@ -152,11 +187,17 @@ function initLeadCalculator() {
 }
 
 // Global initialization
-document.addEventListener("DOMContentLoaded", () => {
+function init() {
   initWhatsAppCTAs();
   initHeaderScroll();
   initMobileMenu();
   initPortfolioFilter();
   initFaqAccordion();
   initLeadCalculator();
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}

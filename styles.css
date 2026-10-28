@@ -337,12 +337,28 @@ h4 { font-size: 1.2rem; }
 
 .mobile-toggle {
   display: none;
-  background: none;
-  border: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   color: var(--primary);
-  font-size: 28px;
+  font-size: 26px;
   cursor: pointer;
-  padding: 6px;
+  padding: 6px 8px;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 1002;
+}
+
+.mobile-toggle:hover,
+.mobile-toggle:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
 }
 
 /* Hero Section */
@@ -1483,14 +1499,19 @@ h4 { font-size: 1.2rem; }
 }
 
 @media (max-width: 768px) {
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
   .site-header {
     height: 70px;
+    z-index: 1000;
   }
   .header-inner {
     height: 70px;
+    position: relative;
   }
   .mobile-toggle {
-    display: block;
+    display: inline-flex;
   }
   .nav-links {
     position: fixed;
@@ -1500,21 +1521,25 @@ h4 { font-size: 1.2rem; }
     background-color: var(--surface-white);
     flex-direction: column;
     align-items: flex-start;
-    padding: 24px;
+    padding: 24px 20px;
     gap: 16px;
-    box-shadow: var(--shadow-lg);
-    border-bottom: 1px solid var(--border);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid var(--accent);
     transform: translateY(-150%);
     opacity: 0;
     visibility: hidden;
-    transition: var(--transition);
+    pointer-events: none;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.28s ease, visibility 0.28s ease;
     max-height: calc(100vh - 70px);
     overflow-y: auto;
+    z-index: 999;
   }
   .nav-links.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
+    display: flex;
   }
   .nav-link {
     font-size: 1.05rem;

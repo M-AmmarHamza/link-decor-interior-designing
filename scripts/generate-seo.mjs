@@ -35,6 +35,14 @@ Sitemap: ${absoluteUrl("/sitemap.xml", siteUrl)}
     writeFile(join(outputDirectory, "robots.txt"), robots, "utf8"),
   ]);
 
+  // Ensure /services/ resolves cleanly alongside /services
+  try {
+    const servicesHtml = await readFile(join(outputDirectory, "services.html"), "utf8");
+    await writeFile(join(outputDirectory, "services", "index.html"), servicesHtml, "utf8");
+  } catch (e) {
+    // Non-fatal if services.html doesn't exist
+  }
+
   console.log(`SEO files generated successfully for ${siteUrl} (${pages.length} URLs in sitemap).`);
 }
 

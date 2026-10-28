@@ -16,15 +16,15 @@ function initWhatsAppCTAs() {
   buttons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      const customMessage = btn.getAttribute("data-message");
       const serviceName = btn.getAttribute("data-service");
+      const customMessage = btn.getAttribute("data-message");
       
       let message = "Hi Link Decor, I would like to book a free consultation for interior designing in Karachi.";
       
-      if (customMessage) {
+      if (serviceName) {
+        message = `Hi Link Decor, I am interested in your ${serviceName} services. Can I get a quote?`;
+      } else if (customMessage) {
         message = customMessage;
-      } else if (serviceName) {
-        message = `Hi Link Decor, I need details and a quote for ${serviceName} at my location in Karachi.`;
       }
       
       const url = buildWhatsAppUrl(message);

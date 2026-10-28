@@ -1212,6 +1212,28 @@ h4 { font-size: 1.2rem; }
   min-width: 1.5rem !important;
 }
 
+.h-48 {
+  height: 12rem !important;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem !important;
+}
+
+.border-0 {
+  border: 0 !important;
+}
+
+.footer-phone-link {
+  color: inherit !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.footer-phone-link:hover {
+  color: var(--accent) !important;
+}
+
 @media (min-width: 640px) {
   .sm\:hidden {
     display: none !important;
@@ -1675,7 +1697,7 @@ h4 { font-size: 1.2rem; }
     padding-bottom: 0 !important;
   }
   .footer-bottom {
-    padding: 20px 20px 76px 20px; /* px-5 aligns neatly with cards; 76px cleanly clears WhatsApp button without massive empty void */
+    padding: 20px 20px 64px 20px; /* Aligns neatly with cards; 64px clears floating WhatsApp button without excessive void */
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;

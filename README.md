@@ -18,8 +18,8 @@ High-converting lead generation website for **Link Decor**, premier interior des
 
 ## Physical Location
 
-- **Showroom Address**: Shop # 12, Main Hub River Road, Near Chandni Chowk, Baldia Town, Karachi, Sindh, Pakistan.
-- **Phone / WhatsApp**: +92 316 1013991
+- **Showroom Address**: 8C-07, Opposite Ayesha Masjid New Saeedabad, Baldia Town, Karachi, Sindh, Pakistan.
+- **Phone / WhatsApp**: +92 313 2663450
 - **Service Coverage**: DHA (Phases 1-8), Clifton, Gulshan-e-Iqbal, Gulistan-e-Johar, PECHS, North Nazimabad, Baldia Town, Bahria Town Karachi.
 
 ## Local Development

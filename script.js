@@ -3,7 +3,7 @@
  * Consultative Selling Architecture for Karachi Interior Designing
  */
 
-const WHATSAPP_NUMBER = "923161013991";
+const WHATSAPP_NUMBER = "923132663450";
 
 function buildWhatsAppUrl(message, phone = WHATSAPP_NUMBER) {
   const cleanPhone = phone.replace(/\D/g, "");

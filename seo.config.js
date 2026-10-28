@@ -1,5 +1,5 @@
 const DEFAULT_SITE_URL = "https://link-decor-interior-designing.vercel.app";
-const DEFAULT_WHATSAPP = "923161013991";
+const DEFAULT_WHATSAPP = "923132663450";
 
 const envSiteUrl =
   (typeof process !== "undefined" && process.env?.VITE_SITE_URL) ||
@@ -17,13 +17,14 @@ export const normalizeSiteUrl = (value = DEFAULT_SITE_URL) =>
 export const SITE_CONFIG = Object.freeze({
   name: "Link Decor",
   legalName: "Link Decor Interior Solutions",
+  owner: "Owais Khan",
   url: normalizeSiteUrl(envSiteUrl),
   locale: "en_PK",
   language: "en-PK",
   currency: "PKR",
   phone: `+${String(envWhatsApp).replace(/\D/g, "")}`,
   whatsapp: String(envWhatsApp).replace(/\D/g, ""),
-  address: "Shop # 12, Main Hub River Road, Near Chandni Chowk, Baldia Town, Karachi, Pakistan",
+  address: "8C-07, Opposite Ayesha Masjid New Saeedabad, Baldia Town, Karachi, Pakistan",
   city: "Karachi",
   region: "Sindh",
   country: "PK",
@@ -97,7 +98,7 @@ export const PAGE_SEO = Object.freeze({
   contact: {
     path: "/contact",
     title: "Contact Link Decor Karachi | Book Free On-Site Consultation",
-    description: "Get in touch with Link Decor in Baldia Town, Karachi. Request a free estimate, schedule on-site measurements, or chat on WhatsApp +92 316 1013991.",
+    description: "Get in touch with Link Decor in Baldia Town, Karachi. Request a free estimate, schedule on-site measurements, or chat on WhatsApp +92 313 2663450.",
     type: "website",
     schemaType: "ContactPage",
   },

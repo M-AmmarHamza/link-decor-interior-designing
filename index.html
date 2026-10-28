@@ -438,7 +438,7 @@
 
   <!-- Interactive Quick WhatsApp Quote Calculator -->
   <section class="container">
-    <div class="quote-section">
+    <div class="quote-section px-4 sm:px-5">
       <div class="quote-grid">
         <div class="quote-info">
           <span class="section-eyebrow" style="color:#f7d58a;">Fast &amp; Accurate Estimation</span>
@@ -453,16 +453,16 @@
           </ul>
         </div>
 
-        <div class="quote-form-card">
-          <form id="quote-calculator-form">
+        <div class="quote-form-card w-full max-w-lg mx-auto">
+          <form id="quote-calculator-form" class="w-full">
             <div class="form-group">
-              <label class="form-label">Your Name</label>
-              <input type="text" name="name" class="form-control" placeholder="e.g. Tariq Mehmood" required>
+              <label class="form-label mb-1 text-sm font-semibold">Your Name</label>
+              <input type="text" name="name" class="form-control w-full" placeholder="e.g. Tariq Mehmood" required>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Required Service</label>
-                <select name="service" class="form-control" required>
+                <label class="form-label mb-1 text-sm font-semibold">Required Service</label>
+                <select name="service" class="form-control w-full" required>
                   <option value="Gypsum False Ceiling">Gypsum False Ceiling (Rs. 140/sq.ft)</option>
                   <option value="PVC False Ceiling">PVC False Ceiling (Rs. 160/sq.ft)</option>
                   <option value="SPC Waterproof Flooring">SPC Waterproof Flooring (Rs. 280/sq.ft)</option>
@@ -473,8 +473,8 @@
                 </select>
               </div>
               <div class="form-group">
-                <label class="form-label">Your Area in Karachi</label>
-                <select name="area" class="form-control" required>
+                <label class="form-label mb-1 text-sm font-semibold">Your Area in Karachi</label>
+                <select name="area" class="form-control w-full" required>
                   <option value="DHA (Phase 1-8)">DHA (Phase 1-8)</option>
                   <option value="Clifton (Block 1-9)">Clifton (Block 1-9)</option>
                   <option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
@@ -489,14 +489,14 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="form-label">Approximate Area (Sq.ft or Rooms)</label>
-              <input type="text" name="sqft" class="form-control" placeholder="e.g. 500 Sq.ft or 2 Bedrooms">
+              <label class="form-label mb-1 text-sm font-semibold">Approximate Area (Sq.ft or Rooms)</label>
+              <input type="text" name="sqft" class="form-control w-full" placeholder="e.g. 500 Sq.ft or 2 Bedrooms">
             </div>
             <div class="form-group">
-              <label class="form-label">Project Details / Message</label>
-              <textarea name="notes" rows="2" class="form-control" placeholder="Tell us about your requirements..."></textarea>
+              <label class="form-label mb-1 text-sm font-semibold">Project Details / Message</label>
+              <textarea name="notes" rows="2" class="form-control w-full" placeholder="Tell us about your requirements..."></textarea>
             </div>
-            <button type="submit" class="btn btn-whatsapp" style="width:100%; padding:14px; font-size:1.05rem;">
+            <button type="submit" class="btn btn-whatsapp w-full" style="width:100%; padding:13px 14px; font-size:0.98rem;">
               <span class="material-symbols-outlined">send</span>
               Get Free Estimate on WhatsApp
             </button>

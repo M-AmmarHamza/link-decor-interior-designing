@@ -1230,6 +1230,15 @@ h4 { font-size: 1.2rem; }
   }
 }
 
+.rounded-b-lg {
+  border-bottom-left-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
+}
+
+.items-start {
+  align-items: flex-start !important;
+}
+
 .rounded-lg {
   border-radius: 0.5rem !important;
 }
@@ -1425,6 +1434,7 @@ h4 { font-size: 1.2rem; }
   gap: 40px;
   padding-bottom: 50px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  align-items: start;
 }
 
 .footer-nav-group {

@@ -112,9 +112,9 @@ h4 { font-size: 1.2rem; }
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
-  font-size: 0.98rem;
-  font-weight: 600;
+  padding: 10px 20px;
+  font-size: 0.92rem;
+  font-weight: 500;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   cursor: pointer;
@@ -182,13 +182,15 @@ h4 { font-size: 1.2rem; }
 }
 
 .btn-lg {
-  padding: 14px 30px;
-  font-size: 1.05rem;
+  padding: 11px 22px;
+  font-size: 0.96rem;
+  font-weight: 500;
 }
 
 .btn-sm {
-  padding: 8px 16px;
-  font-size: 0.88rem;
+  padding: 7px 15px;
+  font-size: 0.84rem;
+  font-weight: 500;
 }
 
 /* Header & Navigation */
@@ -420,8 +422,8 @@ h4 { font-size: 1.2rem; }
 }
 
 .hero-ctas .btn {
-  padding: 12px 26px; /* py-3: sleek height */
-  font-size: 0.98rem;
+  padding: 10px 22px;
+  font-size: 0.92rem;
   font-weight: 500; /* font-medium */
   line-height: 1.35;
   border-radius: var(--radius-sm);
@@ -787,10 +789,10 @@ h4 { font-size: 1.2rem; }
   background: var(--surface-white);
   border: 1px solid var(--border);
   color: var(--text-muted);
-  padding: 8px 18px;
+  padding: 8px 16px;
   border-radius: 50px;
-  font-size: 0.88rem;
-  font-weight: 600;
+  font-size: 0.86rem;
+  font-weight: 500;
   cursor: pointer;
   transition: var(--transition);
   user-select: none;
@@ -1337,6 +1339,10 @@ h4 { font-size: 1.2rem; }
   max-width: 32rem !important;
 }
 
+.max-w-3xl {
+  max-width: 48rem !important;
+}
+
 .mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -1413,6 +1419,16 @@ h4 { font-size: 1.2rem; }
   padding-right: 1.5rem !important;
 }
 
+.px-5 {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+.py-10 {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
 @media (min-width: 640px) {
   .sm\:flex-row {
     flex-direction: row !important;
@@ -1429,6 +1445,14 @@ h4 { font-size: 1.2rem; }
   }
   .sm\:text-base {
     font-size: 1rem !important;
+  }
+  .sm\:py-12 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .sm\:px-8 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
   }
 }
 
@@ -1818,8 +1842,9 @@ h4 { font-size: 1.2rem; }
   }
   .quote-form-card .btn-whatsapp {
     width: 100%;
-    padding: 13px 14px;
-    font-size: 0.96rem;
+    padding: 10px 14px;
+    font-size: 0.92rem;
+    font-weight: 500;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
@@ -1916,7 +1941,7 @@ h4 { font-size: 1.2rem; }
   background: linear-gradient(135deg, var(--primary) 0%, #223247 100%);
   color: #ffffff;
   border-radius: var(--radius-lg);
-  padding: 56px 40px;
+  padding: 40px 24px; /* py-10 px-6 compact spacing */
   text-align: center;
   box-shadow: var(--shadow-lg);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1924,24 +1949,34 @@ h4 { font-size: 1.2rem; }
 
 .cta-banner h2 {
   color: #ffffff;
-  font-size: 2.1rem;
-  margin-bottom: 14px;
+  font-size: 1.95rem;
+  margin-bottom: 12px;
 }
 
 .cta-banner p {
   color: #e2e8f0;
   max-width: 640px;
-  margin: 0 auto 28px;
-  font-size: 1.05rem;
+  margin: 0 auto 24px;
+  font-size: 1rem;
   line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .cta-banner {
+    padding: 48px 32px; /* sm:py-12 sm:px-8 */
+  }
 }
 
 @media (max-width: 768px) {
   .cta-banner {
-    padding: 36px 20px;
+    padding: 32px 18px;
   }
   .cta-banner h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+  }
+  .cta-banner p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
   }
 }
 

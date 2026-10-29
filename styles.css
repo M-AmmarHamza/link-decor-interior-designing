@@ -721,22 +721,26 @@ h4 { font-size: 1.2rem; }
 /* Portfolio / Completed Projects Section */
 
 /* Horizontal Scrollable Gallery Filter Bar */
-#gallery-portfolio,
+#gallery-portfolio {
+  padding-top: 2rem !important; /* pt-8: 32px standard spacing so filters sit right below the banner */
+  overflow: visible !important;
+}
+
 #gallery-portfolio .container {
   overflow: visible !important;
 }
 
-.portfolio-tabs-container {
+#gallery-portfolio .portfolio-tabs-container {
   width: 100%;
-  margin-top: 28px;
-  margin-bottom: 36px;
+  margin-top: 0 !important;
+  margin-bottom: 24px;
   position: relative;
   overflow: visible;
 }
 
 /* Ensure scrolling tabs span full viewport width on mobile without container edge clamping */
 @media (max-width: 768px) {
-  .portfolio-tabs-container {
+  #gallery-portfolio .portfolio-tabs-container {
     margin-left: -20px;
     margin-right: -20px;
     width: calc(100% + 40px);
@@ -746,15 +750,23 @@ h4 { font-size: 1.2rem; }
 
 .portfolio-tabs {
   display: flex;
+  flex-wrap: nowrap;
   overflow-x: auto;
   white-space: nowrap;
-  gap: 8px; /* gap-2 */
+  width: 100%;
+  gap: 12px; /* gap-3 */
   padding: 16px 16px; /* py-4 px-4 */
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
   scroll-behavior: smooth;
+  cursor: grab;
+}
+
+.portfolio-tabs.grabbing {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .portfolio-tabs::-webkit-scrollbar,
@@ -1955,4 +1967,16 @@ h4 { font-size: 1.2rem; }
     grid-template-columns: 1fr;
     gap: 20px;
   }
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.pt-8 {
+  padding-top: 2rem !important;
+}
+
+.mt-8 {
+  margin-top: 2rem !important;
 }

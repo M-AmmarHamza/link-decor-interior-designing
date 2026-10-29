@@ -150,6 +150,41 @@ function initPortfolioFilter() {
     });
   });
 
+  // Desktop mouse wheel & drag horizontal scrolling for 18 category filter tabs
+  const tabsContainer = document.querySelector(".portfolio-tabs");
+  if (tabsContainer) {
+    tabsContainer.addEventListener("wheel", (e) => {
+      if (e.deltaY !== 0 && tabsContainer.scrollWidth > tabsContainer.clientWidth) {
+        e.preventDefault();
+        tabsContainer.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
+
+    let isDown = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    tabsContainer.addEventListener("mousedown", (e) => {
+      isDown = true;
+      startX = e.pageX - tabsContainer.offsetLeft;
+      scrollStart = tabsContainer.scrollLeft;
+    });
+
+    window.addEventListener("mouseup", () => {
+      isDown = false;
+      tabsContainer.classList.remove("grabbing");
+    });
+
+    tabsContainer.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      tabsContainer.classList.add("grabbing");
+      const x = e.pageX - tabsContainer.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      tabsContainer.scrollLeft = scrollStart - walk;
+    });
+  }
+
   // Default active state is "All Catalogs"
   const activeBtn = document.querySelector(".portfolio-tab-btn.active");
   if (activeBtn) {
